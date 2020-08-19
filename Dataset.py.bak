@@ -92,6 +92,6 @@ def gettestdataloder(batch_size):
     dataset2 = datasets.ImageFolder('data/testimg/magnetogram', transform=transforms.Compose(tra))
     sampler2 = myRandomSampler(dataset1)
     dataloader2 = torch.utils.data.DataLoader(dataset2, batch_size=batch_size, sampler=sampler2)
-    return dataloader1, dataloader2
+    return zip(dataloader1, dataloader2)
 
 # makedata()
